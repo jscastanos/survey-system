@@ -1,7 +1,7 @@
 #ASP.NET
 packages
-./Web.config
-./Web.*.config
+SurveySystem/Web.config
+SurveySystem/Web.*.config
 
 
 #Node Modules
