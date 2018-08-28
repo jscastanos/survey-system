@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DB_A3D432_monnixSystemsPModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="tSurvey">
+    <Key>
+      <PropertyRef Name="recNo" />
+    </Key>
+    <Property Name="recNo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="idNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="brgyCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="catCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="value" Type="Int32" />
+    <Property Name="sampleSize" Type="Int32" />
+    <Property Name="tag" Type="Int32" />
+    <Property Name="wave" Type="Int32" />
+  </EntityType>
+  <EntityContainer Name="DB_A3D432_monnixSystemsPEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="tSurveys" EntityType="Self.tSurvey" />
+  </EntityContainer>
+</Schema>

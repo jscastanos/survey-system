@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="5030d7a4193848f38bd040e84574403b" Name="Diagram1">
+        <EntityTypeShape EntityType="SurveyModel.tAssignedPlace" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="SurveyModel.tBrgy" Width="1.5" PointX="2.75" PointY="0.75" />
+        <EntityTypeShape EntityType="SurveyModel.tCategory" Width="1.5" PointX="0.75" PointY="3.75" />
+        <EntityTypeShape EntityType="SurveyModel.tCategoryByDist" Width="1.5" PointX="2.75" PointY="3.75" />
+        <EntityTypeShape EntityType="SurveyModel.tCategoryByMunCity" Width="1.5" PointX="4.75" PointY="0.75" />
+        <EntityTypeShape EntityType="SurveyModel.tChoice" Width="1.5" PointX="4.75" PointY="3.75" />
+        <EntityTypeShape EntityType="SurveyModel.tEnumerator" Width="1.5" PointX="6.75" PointY="0.75" />
+        <EntityTypeShape EntityType="SurveyModel.tMunCity" Width="1.5" PointX="0.75" PointY="6.75" />
+        <EntityTypeShape EntityType="SurveyModel.tSurvey" Width="1.5" PointX="2.75" PointY="6.75" />
+        <EntityTypeShape EntityType="SurveyModel.tUser" Width="1.5" PointX="6.75" PointY="4.75" />
+        <EntityTypeShape EntityType="SurveyModel.vAssignedLoc" Width="1.5" PointX="4.75" PointY="7.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

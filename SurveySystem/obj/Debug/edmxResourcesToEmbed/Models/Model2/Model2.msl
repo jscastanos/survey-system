@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="DB_A3D432_monnixSystemsPModelStoreContainer" CdmEntityContainer="DB_A3D432_monnixSystemsPEntities">
+    <EntitySetMapping Name="tSurveys">
+      <EntityTypeMapping TypeName="DB_A3D432_monnixSystemsPModel.tSurvey">
+        <MappingFragment StoreEntitySet="tSurvey">
+          <ScalarProperty Name="recNo" ColumnName="recNo" />
+          <ScalarProperty Name="idNo" ColumnName="idNo" />
+          <ScalarProperty Name="brgyCode" ColumnName="brgyCode" />
+          <ScalarProperty Name="catCode" ColumnName="catCode" />
+          <ScalarProperty Name="value" ColumnName="value" />
+          <ScalarProperty Name="sampleSize" ColumnName="sampleSize" />
+          <ScalarProperty Name="tag" ColumnName="tag" />
+          <ScalarProperty Name="wave" ColumnName="wave" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,106 @@
+﻿<script src="~/Scripts/angular.min.js"></script>
+<script src="~/Scripts/app/app.js"></script>
+<script src="~/Scripts/app/utilities/assignplaceCtrl.js"></script>
+
+
+<div ng-app="CBSS" ng-controller="assignCtrl">
+
+    <select class="form-control" 
+            ng-change="getUserList()" 
+            ng-model="userId"
+            ng-options="user as user.enumerator for user in users"></select>
+
+
+
+    <div style="margin-top: 50px;" ng-if="selectedUser != undefined">
+        <div class="col-md-12" style="height: 80px;">
+            <h2 class="pull-left">{{ selectedUser }}</h2>
+            <button class="btn btn-primary pull-left" data-toggle="modal" data-target="#assignModal"
+                    style="margin-top: 20px; margin-left: 20px;">
+                <i class="glyphicon glyphicon-plus"></i>
+                Add Assign Location
+            </button>
+
+        </div>
+         
+
+        <div class="col-md-6">
+            <div ng-repeat="al in oddAssignList" ng-if="al.assignBrgy.length > 0"
+                    style="margin-top: 20px;">
+                <h4>{{ al.munCityName }}</h4>
+
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Brgy Name</th>
+                            <th class="text-center">Sample Size</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="bl in al.assignBrgy">
+                            <td>{{ bl.brgyName }}</td>
+                            <td style="width: 150px;" class="text-center">
+                                {{ bl.numRef }} 
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div ng-repeat="al in evenAssignList" ng-if="al.assignBrgy.length > 0"
+                    style="margin-top: 20px;">
+                <h4>{{ al.munCityName }}</h4>
+
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Brgy Name</th>
+                            <th class="text-center">Sample Size</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="bl in al.assignBrgy">
+                            <td>{{ bl.brgyName }}</td>
+                            <td style="width: 150px;" class="text-center">{{ bl.numRef }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+
+
+        <div class="modal" id="assignModal" ng-click="openModal()">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        Add Assign Location
+                    </div>
+                    <div class="modal-body">
+                        <select class="form-control"
+                                ng-change="getModalMun(selectedMun)"
+                                ng-model="selectedMun"
+                                ng-options="mun.munCityCode as mun.munCityName for mun in munList"></select>
+
+                        <select class="form-control"
+                                ng-options="brgy.brgyCode as brgy.brgyName for brgy in brgyList"
+                                ng-model="am.brgyCode"></select>
+
+                        <input type="text" class="form-control" ng-model="am.numRef" value="" />
+                    </div>
+                    <div class="modal-footer">
+
+                        <button class="btn btn-primary"
+                                ng-click="getAMData(am)">Submit</button>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+</div>

@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DB_A3D432_monnixSystemsPModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="tSurvey">
+    <Key>
+      <PropertyRef Name="recNo" />
+    </Key>
+    <Property Name="recNo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="idNo" Type="nvarchar" MaxLength="50" />
+    <Property Name="brgyCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="catCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="value" Type="int" />
+    <Property Name="sampleSize" Type="int" />
+    <Property Name="tag" Type="int" />
+    <Property Name="wave" Type="int" />
+  </EntityType>
+  <EntityContainer Name="DB_A3D432_monnixSystemsPModelStoreContainer">
+    <EntitySet Name="tSurvey" EntityType="Self.tSurvey" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>
