@@ -1,0 +1,9 @@
+#ASP.NET
+packages
+./Web.config
+./Web.*.config
+
+
+#Node Modules
+./node_modules
+
