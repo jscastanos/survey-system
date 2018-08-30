@@ -15,24 +15,26 @@
 
     s.getUserList = function () {
 
-        s.oddAssignList = [];
-        s.evenAssignList = [];
-
         h.post("../Utilities/getassignList?idNo=" + s.userId.idNo).then(function(d){
            
             s.selectedUser = s.userId.enumerator;
-          
-            console.log(d.data)
+            s.assignList = d.data;
 
-            for (x = 0; x < d.data.length; x++) {
+           
+            s.assignList.forEach(function (m) {
 
-                if (x % 2 == 0) {
-                    s.evenAssignList.push(d.data[x]);
-                } else {
-                    s.oddAssignList.push(d.data[x]);
-                }
+                m.assignBrgy.forEach(function (b, i) {
 
-            }
+                    if (b.synchData != null) {
+                        b.progress = (b.synchData / b.numRef) * 100;
+                    } else {
+                        b.synchData = 0;
+                        b.progress = 0;
+                    }
+
+                })
+
+            });
 
 
         })
@@ -41,7 +43,7 @@
 
 
     s.openModal = function () {
-        h.get("../Utilities/getMun").then(function (d) {
+        h.get("../Home/getMunCity").then(function (d) {
 
             s.munList = d.data;
 
@@ -65,7 +67,6 @@
 
         var JSONdata = JSON.stringify(am);
 
-        console.log(am)
 
         h.post("../Utilities/saveAssignPlace?data=" + JSONdata).then(function (d) {
 

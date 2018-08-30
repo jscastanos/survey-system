@@ -1,34 +1,39 @@
-﻿
+﻿@{
+    ViewBag.Menu = "Utilities";
+
+}
+
 <script src="~/Scripts/angular.min.js"></script>
 <script src="~/Scripts/app/app.js"></script>
 <script src="~/Scripts/app/utilities/brgyCtrl.js"></script>
 
 <div ng-app="CBSS" ng-controller="brgyCtrl">
 
-    <div style="padding-bottom: 50px;">
-        <div class="col-xs-4">
-            <select ng-model="selectMun" ng-change="getSelectedMun()" class="form-control">
+    <div class="m-t-10 m-b-20 row">
+
+        <div class="col-5">
+            <select ng-model="selectMun" ng-change="getSelectedMun()" class="custom-select custom-select-md">
                 <option ng-repeat="m in munList" value="{{ m.munCityCode }}">
                     {{m.munCityName}}
                 </option>
             </select>
         </div>
-        <div class="col-xs-4 pull-right">
+
+        <div class="col">
             <button class="btn btn-primary pull-right" data-toggle="modal" data-target="#brgyModal" ng-click="addBrgy()">
-                <i class="glyphicon glyphicon-plus"></i>
+                <i class="fa fa-plus"></i>
                 Add Barangay
             </button>
         </div>
+
     </div>
-
-
     <div class="col-md-12">
         <table class="table">
             <thead>
                 <tr>
                     <th>Brgy Code</th>
                     <th>Brgy Name</th>
-                    <th>Sample Size</th>
+                    <th class="text-center">Sample Size</th>
                     <th>Action</th>
                 </tr>
             </thead>
@@ -36,7 +41,7 @@
                 <tr ng-repeat="b in brgyList">
                     <td>{{ b.brgyCode }}</td>
                     <td>{{ b.brgyName }}</td>
-                    <td>{{ b.numRef }}</td>
+                    <td class="text-center">{{ b.numRef }}</td>
                     <td>
                         <button class="btn btn-success" data-toggle="modal" data-target="#brgyModal" ng-click="editBrgy(b)">
                             <i class="glyphicon glyphicon-pencil"></i>
@@ -47,63 +52,63 @@
 
             </tbody>
         </table>
-     </div>  
+    </div>
 
-        <div class="modal" id="brgyModal">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h4 class="modal-title">{{modalState}} Barangay Details</h4>
-                    </div>
-                    <div class="modal-body">
-                        <div class="form-horizontal">
-                            <div class="form-group" ng-if="modalState == 'Add'">
-                                <label class="col-md-4">Mun Code</label>
-                                <div class="col-md-8">
-                                    <select ng-model="selectedBrgy.munCityCode" class="form-control">
-                                        <option ng-repeat="m in munList" value="{{ m.munCityCode }}">
-                                            {{m.munCityName}}
-                                        </option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label class="col-md-4">Brgy Code</label>
-                                <div class="col-md-8">
-                                    <input type="text" class="form-control" ng-model="selectedBrgy.brgyCode" />
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label class="col-md-4">Brgy Name</label>
-                                <div class="col-md-8">
-                                    <input type="text" class="form-control" ng-model="selectedBrgy.brgyName" />
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label class="col-md-4">Sample Size</label>
-                                <div class="col-md-8">
-                                    <input type="text" class="form-control" ng-model="selectedBrgy.numRef" />
-                                </div>
+    <div class="modal" id="brgyModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">{{modalState}} Barangay Details</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="form-horizontal">
+                        <div class="form-group" ng-if="modalState == 'Add'">
+                            <label class="col-md-4">Mun Code</label>
+                            <div class="col-md-8">
+                                <select ng-model="selectedBrgy.munCityCode" class="form-control">
+                                    <option ng-repeat="m in munList" value="{{ m.munCityCode }}">
+                                        {{m.munCityName}}
+                                    </option>
+                                </select>
                             </div>
                         </div>
-
-                        <div class="alert alert-danger" ng-if="isModalError == true">
-                            <i class="glyphicon glyphicon-exclamation-sign"></i> 
-                            ERROR: {{ modalError }}
+                        <div class="form-group">
+                            <label class="col-md-4">Brgy Code</label>
+                            <div class="col-md-8">
+                                <input type="text" class="form-control" ng-model="selectedBrgy.brgyCode" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-4">Brgy Name</label>
+                            <div class="col-md-8">
+                                <input type="text" class="form-control" ng-model="selectedBrgy.brgyName" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-4">Sample Size</label>
+                            <div class="col-md-8">
+                                <input type="text" class="form-control" ng-model="selectedBrgy.numRef" />
+                            </div>
                         </div>
                     </div>
-                    <div class="modal-footer">
-                        <button class="btn btn-danger" data-dismiss="modal">
-                            <i class="glyphicon glyphicon-remove"></i>
-                            Cancel
-                        </button>
-                        <button class="btn btn-primary" ng-click="updateBrgy(selectedBrgy)">
-                            <i class="glyphicon glyphicon-send"></i>
-                            Submit
-                        </button>
+
+                    <div class="alert alert-danger" ng-if="isModalError == true">
+                        <i class="glyphicon glyphicon-exclamation-sign"></i>
+                        ERROR: {{ modalError }}
                     </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-danger" data-dismiss="modal">
+                        <i class="fa fa-remove"></i>
+                        Cancel
+                    </button>
+                    <button class="btn btn-primary" ng-click="updateBrgy(selectedBrgy)">
+                        <i class="fa fa-send"></i>
+                        Submit
+                    </button>
                 </div>
             </div>
         </div>
-
     </div>
+
+</div>

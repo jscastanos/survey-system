@@ -27,11 +27,6 @@ namespace SurveySystem.Controllers
             return View();
         }
 
-        public ActionResult GetMun()
-        {
-            return Json(db.tMunCities.ToList(), JsonRequestBehavior.AllowGet);
-        }
-
         public ActionResult GetBrgyList(string munCode)
         {
             var brgy = (from a in db.tBrgies
@@ -117,7 +112,8 @@ namespace SurveySystem.Controllers
                                     c.brgyCode,
                                     brgyName = db.tBrgies.Where(x => x.brgyCode == c.brgyCode).Select(y => y.brgyName).FirstOrDefault(),
                                     b.numRef,
-                                    synchData = db.tSurveys.Where(x => x.idNo == idNo && x.brgyCode == b.brgyCode).Select(y => y.sampleSize).Max()
+                                    synchData = db.tSurveys.Where(x => x.idNo == idNo && x.brgyCode == b.brgyCode).Select(y => y.sampleSize).Distinct().Count()
+
 
 
                                 })

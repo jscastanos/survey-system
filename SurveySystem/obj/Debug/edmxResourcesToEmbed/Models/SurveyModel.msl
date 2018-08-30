@@ -91,21 +91,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="tSurveys">
-      <EntityTypeMapping TypeName="SurveyModel.tSurvey">
-        <MappingFragment StoreEntitySet="tSurvey">
-          <ScalarProperty Name="dateSaved" ColumnName="dateSaved" />
-          <ScalarProperty Name="wave" ColumnName="wave" />
-          <ScalarProperty Name="tag" ColumnName="tag" />
-          <ScalarProperty Name="sampleSize" ColumnName="sampleSize" />
-          <ScalarProperty Name="value" ColumnName="value" />
-          <ScalarProperty Name="catCode" ColumnName="catCode" />
-          <ScalarProperty Name="brgyCode" ColumnName="brgyCode" />
-          <ScalarProperty Name="idNo" ColumnName="idNo" />
-          <ScalarProperty Name="recNo" ColumnName="recNo" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="tUsers">
       <EntityTypeMapping TypeName="SurveyModel.tUser">
         <MappingFragment StoreEntitySet="tUser">
@@ -129,6 +114,20 @@
           <ScalarProperty Name="district" ColumnName="district" />
           <ScalarProperty Name="munCityName" ColumnName="munCityName" />
           <ScalarProperty Name="munCityCode" ColumnName="munCityCode" />
+          <ScalarProperty Name="idNo" ColumnName="idNo" />
+          <ScalarProperty Name="recNo" ColumnName="recNo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tSurveys">
+      <EntityTypeMapping TypeName="SurveyModel.tSurvey">
+        <MappingFragment StoreEntitySet="tSurvey">
+          <ScalarProperty Name="wave" ColumnName="wave" />
+          <ScalarProperty Name="tag" ColumnName="tag" />
+          <ScalarProperty Name="sampleSize" ColumnName="sampleSize" />
+          <ScalarProperty Name="value" ColumnName="value" />
+          <ScalarProperty Name="catCode" ColumnName="catCode" />
+          <ScalarProperty Name="brgyCode" ColumnName="brgyCode" />
           <ScalarProperty Name="idNo" ColumnName="idNo" />
           <ScalarProperty Name="recNo" ColumnName="recNo" />
         </MappingFragment>

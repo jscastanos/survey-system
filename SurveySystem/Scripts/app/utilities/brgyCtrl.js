@@ -5,7 +5,7 @@
     getBrgy();
 
     function getBrgy() {
-        h.get("../Utilities/getMun").then(function (d) {
+        h.get("../Home/getMunCity").then(function (d) {
 
             s.munList = d.data;
 

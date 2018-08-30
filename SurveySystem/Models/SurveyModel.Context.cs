@@ -33,8 +33,8 @@ namespace SurveySystem.Models
         public virtual DbSet<tChoice> tChoices { get; set; }
         public virtual DbSet<tEnumerator> tEnumerators { get; set; }
         public virtual DbSet<tMunCity> tMunCities { get; set; }
-        public virtual DbSet<tSurvey> tSurveys { get; set; }
         public virtual DbSet<tUser> tUsers { get; set; }
         public virtual DbSet<vAssignedLoc> vAssignedLocs { get; set; }
+        public virtual DbSet<tSurvey> tSurveys { get; set; }
     }
 }

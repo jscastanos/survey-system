@@ -94,7 +94,6 @@
     <Property Name="sampleSize" Type="int" />
     <Property Name="tag" Type="int" />
     <Property Name="wave" Type="int" />
-    <Property Name="dateSaved" Type="nvarchar" MaxLength="50" />
   </EntityType>
   <EntityType Name="tUser">
     <Key>

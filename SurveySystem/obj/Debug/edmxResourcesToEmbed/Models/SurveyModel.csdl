@@ -9,9 +9,9 @@
     <EntitySet Name="tChoices" EntityType="SurveyModel.tChoice" />
     <EntitySet Name="tEnumerators" EntityType="SurveyModel.tEnumerator" />
     <EntitySet Name="tMunCities" EntityType="SurveyModel.tMunCity" />
-    <EntitySet Name="tSurveys" EntityType="SurveyModel.tSurvey" />
     <EntitySet Name="tUsers" EntityType="SurveyModel.tUser" />
     <EntitySet Name="vAssignedLocs" EntityType="SurveyModel.vAssignedLoc" />
+    <EntitySet Name="tSurveys" EntityType="SurveyModel.tSurvey" />
   </EntityContainer>
   <EntityType Name="tAssignedPlace">
     <Key>
@@ -95,20 +95,6 @@
     <Property Name="district" Type="Int32" />
     <Property Name="sortTag" Type="Int32" />
   </EntityType>
-  <EntityType Name="tSurvey">
-    <Key>
-      <PropertyRef Name="recNo" />
-    </Key>
-    <Property Name="recNo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="idNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="brgyCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="catCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="value" Type="Int32" />
-    <Property Name="sampleSize" Type="Int32" />
-    <Property Name="tag" Type="Int32" />
-    <Property Name="wave" Type="Int32" />
-    <Property Name="dateSaved" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-  </EntityType>
   <EntityType Name="tUser">
     <Key>
       <PropertyRef Name="idNo" />
@@ -137,5 +123,18 @@
     <Property Name="role" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="numRef" Type="Int32" />
     <Property Name="tag" Type="Int32" />
+  </EntityType>
+  <EntityType Name="tSurvey">
+    <Key>
+      <PropertyRef Name="recNo" />
+    </Key>
+    <Property Name="recNo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="idNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="brgyCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="catCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="value" Type="Int32" />
+    <Property Name="sampleSize" Type="Int32" />
+    <Property Name="tag" Type="Int32" />
+    <Property Name="wave" Type="Int32" />
   </EntityType>
 </Schema>

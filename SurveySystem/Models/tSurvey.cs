@@ -22,6 +22,5 @@ namespace SurveySystem.Models
         public Nullable<int> sampleSize { get; set; }
         public Nullable<int> tag { get; set; }
         public Nullable<int> wave { get; set; }
-        public string dateSaved { get; set; }
     }
 }

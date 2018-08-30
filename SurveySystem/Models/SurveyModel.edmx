@@ -99,7 +99,6 @@
           <Property Name="sampleSize" Type="int" />
           <Property Name="tag" Type="int" />
           <Property Name="wave" Type="int" />
-          <Property Name="dateSaved" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="tUser">
           <Key>
@@ -173,9 +172,9 @@ warning 6002: The table/view 'Survey.dbo.vAssignedLoc' does not have a primary k
           <EntitySet Name="tChoices" EntityType="SurveyModel.tChoice" />
           <EntitySet Name="tEnumerators" EntityType="SurveyModel.tEnumerator" />
           <EntitySet Name="tMunCities" EntityType="SurveyModel.tMunCity" />
-          <EntitySet Name="tSurveys" EntityType="SurveyModel.tSurvey" />
           <EntitySet Name="tUsers" EntityType="SurveyModel.tUser" />
           <EntitySet Name="vAssignedLocs" EntityType="SurveyModel.vAssignedLoc" />
+          <EntitySet Name="tSurveys" EntityType="SurveyModel.tSurvey" />
         </EntityContainer>
         <EntityType Name="tAssignedPlace">
           <Key>
@@ -259,20 +258,6 @@ warning 6002: The table/view 'Survey.dbo.vAssignedLoc' does not have a primary k
           <Property Name="district" Type="Int32" />
           <Property Name="sortTag" Type="Int32" />
         </EntityType>
-        <EntityType Name="tSurvey">
-          <Key>
-            <PropertyRef Name="recNo" />
-          </Key>
-          <Property Name="recNo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="idNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="brgyCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="catCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="value" Type="Int32" />
-          <Property Name="sampleSize" Type="Int32" />
-          <Property Name="tag" Type="Int32" />
-          <Property Name="wave" Type="Int32" />
-          <Property Name="dateSaved" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-        </EntityType>
         <EntityType Name="tUser">
           <Key>
             <PropertyRef Name="idNo" />
@@ -301,6 +286,19 @@ warning 6002: The table/view 'Survey.dbo.vAssignedLoc' does not have a primary k
           <Property Name="role" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="numRef" Type="Int32" />
           <Property Name="tag" Type="Int32" />
+        </EntityType>
+        <EntityType Name="tSurvey">
+          <Key>
+            <PropertyRef Name="recNo" />
+          </Key>
+          <Property Name="recNo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="idNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="brgyCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="catCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="value" Type="Int32" />
+          <Property Name="sampleSize" Type="Int32" />
+          <Property Name="tag" Type="Int32" />
+          <Property Name="wave" Type="Int32" />
         </EntityType>
         </Schema>
     </edmx:ConceptualModels>
@@ -398,21 +396,6 @@ warning 6002: The table/view 'Survey.dbo.vAssignedLoc' does not have a primary k
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="tSurveys">
-            <EntityTypeMapping TypeName="SurveyModel.tSurvey">
-              <MappingFragment StoreEntitySet="tSurvey">
-                <ScalarProperty Name="dateSaved" ColumnName="dateSaved" />
-                <ScalarProperty Name="wave" ColumnName="wave" />
-                <ScalarProperty Name="tag" ColumnName="tag" />
-                <ScalarProperty Name="sampleSize" ColumnName="sampleSize" />
-                <ScalarProperty Name="value" ColumnName="value" />
-                <ScalarProperty Name="catCode" ColumnName="catCode" />
-                <ScalarProperty Name="brgyCode" ColumnName="brgyCode" />
-                <ScalarProperty Name="idNo" ColumnName="idNo" />
-                <ScalarProperty Name="recNo" ColumnName="recNo" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="tUsers">
             <EntityTypeMapping TypeName="SurveyModel.tUser">
               <MappingFragment StoreEntitySet="tUser">
@@ -436,6 +419,20 @@ warning 6002: The table/view 'Survey.dbo.vAssignedLoc' does not have a primary k
                 <ScalarProperty Name="district" ColumnName="district" />
                 <ScalarProperty Name="munCityName" ColumnName="munCityName" />
                 <ScalarProperty Name="munCityCode" ColumnName="munCityCode" />
+                <ScalarProperty Name="idNo" ColumnName="idNo" />
+                <ScalarProperty Name="recNo" ColumnName="recNo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tSurveys">
+            <EntityTypeMapping TypeName="SurveyModel.tSurvey">
+              <MappingFragment StoreEntitySet="tSurvey">
+                <ScalarProperty Name="wave" ColumnName="wave" />
+                <ScalarProperty Name="tag" ColumnName="tag" />
+                <ScalarProperty Name="sampleSize" ColumnName="sampleSize" />
+                <ScalarProperty Name="value" ColumnName="value" />
+                <ScalarProperty Name="catCode" ColumnName="catCode" />
+                <ScalarProperty Name="brgyCode" ColumnName="brgyCode" />
                 <ScalarProperty Name="idNo" ColumnName="idNo" />
                 <ScalarProperty Name="recNo" ColumnName="recNo" />
               </MappingFragment>
