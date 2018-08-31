@@ -10,12 +10,12 @@
 
     <h4 class="mt-0 header-title">Select Municipality</h4>
     <select class="custom-select custom-md-select col-5"
-            ng-change="loadData(selectedMun)"
+            ng-change="loadData(selectedMun.munCityCode)"
             ng-model="selectedMun"
-            ng-options="m.munCityCode as m.munCityName for m in munList"></select>
+            ng-options="m as m.munCityName for m in munList"></select>
     <div class="row">
         <div class="m-t-30 m-b-30 col-5">
-
+            <h4 class="m-b-20 text-center">{{ selectedMun.munCityName }}</h4>
             <div id="mun-graph" style="height: 300px"></div>
 
             <div class="row">
@@ -32,7 +32,7 @@
 
         <div class="m-t-30 m-b-30 col" style="height: 450px; overflow-y:scroll;">
 
-                <div ng-repeat="bl in brgyList" class="m-t-15 card-text">
+                <div ng-repeat="bl in brgyList" class="m-t-20 card-text">
                     <span>{{ bl.brgyName }}</span>
                     <i class="mdi mdi-cloud-check font-20 text-success"
                        ng-if="bl.progress >= 100"></i>

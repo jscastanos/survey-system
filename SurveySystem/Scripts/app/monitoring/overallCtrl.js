@@ -3,7 +3,7 @@
     getMun();
     
 
-    s.loadData = function(d) {
+    s.loadData = function (d) {
 
         h.get("../Monitoring/getmundetails?muncitycode=" + d).then(
 
