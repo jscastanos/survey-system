@@ -40,8 +40,6 @@
         if (s.modalState == "Add") {
             var newData = JSON.stringify(b);
 
-            console.log(b);
-
             if(b.brgyCode != "" ||
                b.brgyName != "" ||
                b.numRef != "") {
@@ -49,12 +47,9 @@
                 h.post("../Utilities/addBrgyDetails?data=" + newData).then(function (d) {
 
                     if (d.data == "success") {
-
                         $("#brgyModal").modal("hide");
 
-                    } else {
-                        console.log("error")
-                    }
+                    } 
                 });
 
                 s.isModalError = false;
@@ -81,15 +76,10 @@
 
                 h.post("../Utilities/updateBrgyDetails?data=" + newData).then(function (d) {
 
-                    console.log(d)
-
                     if (d.data == "success") {
-                        console.log("success")
                         $("#brgyModal").modal("hide");
 
-                    } else {
-                        console.log("error")
-                    }
+                    } 
                 });
 
                 s.isModalError = false;

@@ -12,8 +12,6 @@
                 s.totalNumRef = d.data[0].totalNumRef;
                 s.brgyList = d.data[0].brgyList;
 
-                console.log(s.brgyList)
-
                 d.data[0].totalSynch.forEach(function (d) {
                     s.totalSynch += d;
                 });
@@ -42,9 +40,6 @@
 
             },
 
-            function () { //error
-                console.log("hide chart")
-            }
         );
         
     }

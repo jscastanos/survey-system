@@ -1,1 +1,1 @@
-﻿var app = angular.module("CBSS", []);
+﻿var app = angular.module("Survey", []);

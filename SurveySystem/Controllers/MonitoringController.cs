@@ -23,7 +23,7 @@ namespace SurveySystem.Controllers
             return View();
         }
 
-        public ActionResult Overall()
+        public ActionResult Location()
         {
             return View();
         }

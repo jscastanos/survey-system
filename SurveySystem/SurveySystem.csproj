@@ -476,7 +476,7 @@
     <Content Include="Views\Utilities\BrgyRef.cshtml" />
     <Content Include="Views\Utilities\Index.cshtml" />
     <Content Include="Views\Monitoring\Individual.cshtml" />
-    <Content Include="Views\Monitoring\Overall.cshtml" />
+    <Content Include="Views\Monitoring\Location.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
