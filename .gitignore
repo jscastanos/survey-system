@@ -1,8 +1,15 @@
 #ASP.NET
-#Package Restore
-**/packages/*
+bin
+**/bin
+obj
+**/obj
+packages
+*.suo
+*.user
 
 
 #Node Modules
 /node_modules
 
+#Publish Folder
+/surveypackage
