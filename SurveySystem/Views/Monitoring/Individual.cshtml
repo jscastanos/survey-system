@@ -3,5 +3,53 @@
     ViewBag.Menu = "Monitoring";
 }
 
-<h2>Individual</h2>
+<script src="~/Scripts/angular.min.js"></script>
+<script src="~/Scripts/app/app.js"></script>
+<script src="~/Scripts/app/monitoring/individualCtrl.js"></script>
+
+<div ng-app="Survey" ng-controller="individualCtrl">
+
+    <h4 class="mt-0 header-title">Select Enumerator</h4>
+    <select class="custom-select custom-md-select col-5"
+            ng-change="getUserList()"
+            ng-model="userId"
+            ng-options="user as user.enumerator for user in users"></select>
+    <div class="row">
+        <div class="m-t-30 m-b-30 col-5">
+            <h4 class="m-b-20 text-center">{{ selectedMun.munCityName }}</h4>
+            <div id="mun-graph" style="height: 300px"></div>
+
+            <div class="row">
+                <div class="col-6 text-center">
+                    <h4>{{ totalSynch }}</h4>
+                    <p>Synchronize Data</p>
+                </div>
+                <div class="col-6 text-center">
+                    <h4>{{ totalNumRef }}</h4>
+                    <p>Total Sample Size</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="m-t-30 m-b-30 col" style="height: 450px; overflow-y:scroll;">
+
+            <div ng-repeat="a in assignList" class="m-t-20 card-text">
+                <span>{{ a.brgyName }}</span>
+                <i class="mdi mdi-cloud-check font-20 text-success"
+                   ng-if="bl.progress >= 100"></i>
+                <span class="badge badge-primary pull-right">{{ a.synchData }} / {{ a.numRef }}</span>
+
+                <div class="progress m-t-10" style="height: 5px;">
+                    <div class="progress-bar" role="progressbar" style="width: {{ (a.synchData / a.numRef) * 100 }}%"
+                         aria-valuenow="{{ a.synchData }}" aria-valuemin="0" aria-valuemax="{{ a.numRef }}">
+                    </div>
+                </div>
+            </div>
+            </p>
+            @*<p class="card-text">
+                    <small class="text-muted">Last updated 3 mins ago</small>
+                </p>*@
+        </div>
+    </div>
+</div>
 

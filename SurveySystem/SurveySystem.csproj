@@ -401,7 +401,8 @@
     </Content>
     <Content Include="Scripts\angular.min.js" />
     <Content Include="Scripts\app\app.js" />
-    <Content Include="Scripts\app\monitoring\overallCtrl.js" />
+    <Content Include="Scripts\app\monitoring\individualCtrl.js" />
+    <Content Include="Scripts\app\monitoring\locationCtrl.js" />
     <Content Include="Scripts\app\utilities\assignplaceCtrl.js" />
     <Content Include="Scripts\app\utilities\brgyCtrl.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -477,6 +478,7 @@
     <Content Include="Views\Utilities\Index.cshtml" />
     <Content Include="Views\Monitoring\Individual.cshtml" />
     <Content Include="Views\Monitoring\Location.cshtml" />
+    <Content Include="Views\Shared\_Sidemenu.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

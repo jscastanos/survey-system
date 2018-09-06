@@ -46,49 +46,7 @@
                 </div>
             </div>
             <div class="sidebar-inner slimscrollleft">
-                <div id="sidebar-menu">
-                    <ul>
-                        <li class="menu-title">Main</li>
-                        <li>
-                            <a href="@Url.Content("~/Home")" class="waves-effect">
-                                <i class="ti-home"></i>
-                                <span> Dashboard </span>
-                            </a>
-                        </li>
-                        <li class="has_sub">
-                            <a href="javasctipy:void(0)" class="waves-effect">
-                                <i class="ti-stats-up"></i>
-                                <span>Monitoring</span>
-                                <span class="pull-right">
-                                    <i class="mdi mdi-chevron-right"></i>
-                                </span>
-                            </a>
-                            <ul class="list-unstyled">
-                                <li>
-                                    <a href="@Url.Content("~/Monitoring/Location")">Location</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="has_sub">
-                            <a href="javascript:void(0)" class="waves-effect">
-                                <i class="ti-settings"></i>
-                                <span> Utilities </span>
-                                <span class="pull-right">
-                                    <i class="mdi mdi-chevron-right"></i>
-                                </span>
-                            </a>
-                            <ul class="list-unstyled">
-                                <li>
-                                    <a href="@Url.Content("~/Utilities/AssignPlace")">Assignment</a>
-                                </li>
-                                <li>
-                                    <a href="@Url.Content("~/Utilities/BrgyRef")">Barangay List</a>
-                                </li>
-                            </ul>
-                        </li>
-
-                    </ul>
-                </div>
+                @Html.Partial("_Sidemenu")
                 <div class="clearfix"></div>
             </div> <!-- end sidebarinner -->
         </div>

@@ -23,6 +23,11 @@ namespace SurveySystem.Controllers
             return View();
         }
 
+        public ActionResult GetEnumDetails(string idNo)
+        {
+            return Json(idNo, JsonRequestBehavior.AllowGet);
+        }
+
         public ActionResult Location()
         {
             return View();
@@ -63,6 +68,5 @@ namespace SurveySystem.Controllers
             }
 
             }
-
     }
 }
