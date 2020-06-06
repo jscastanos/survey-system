@@ -164,6 +164,8 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MonitoringController.cs" />
+    <Compile Include="Controllers\ReportingController.cs" />
+    <Compile Include="Controllers\UserManagementController.cs" />
     <Compile Include="Controllers\UtilitiesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -210,6 +212,9 @@
     <Compile Include="Models\tMunCity.cs">
       <DependentUpon>SurveyModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\tPrk.cs">
+      <DependentUpon>SurveyModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\tSurvey.cs">
       <DependentUpon>SurveyModel.tt</DependentUpon>
     </Compile>
@@ -217,6 +222,15 @@
       <DependentUpon>SurveyModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\vAssignedLoc.cs">
+      <DependentUpon>SurveyModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\vSurvey.cs">
+      <DependentUpon>SurveyModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\vSurveyByDist.cs">
+      <DependentUpon>SurveyModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\vSurveyByMunCity.cs">
       <DependentUpon>SurveyModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -403,6 +417,7 @@
     <Content Include="Scripts\app\app.js" />
     <Content Include="Scripts\app\monitoring\individualCtrl.js" />
     <Content Include="Scripts\app\monitoring\locationCtrl.js" />
+    <Content Include="Scripts\app\reporting\distributionCtrl.js" />
     <Content Include="Scripts\app\utilities\assignplaceCtrl.js" />
     <Content Include="Scripts\app\utilities\brgyCtrl.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -479,9 +494,11 @@
     <Content Include="Views\Monitoring\Individual.cshtml" />
     <Content Include="Views\Monitoring\Location.cshtml" />
     <Content Include="Views\Shared\_Sidemenu.cshtml" />
+    <Content Include="Views\Reporting\Distribution.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\UserManagement\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

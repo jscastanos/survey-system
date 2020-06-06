@@ -1,0 +1,61 @@
+﻿<script src="~/Scripts/angular.min.js"></script>
+<script src="~/Scripts/app/app.js"></script>
+<script src="~/Scripts/app/reporting/distributionCtrl.js"></script>
+
+<style>
+    .disTable{
+        margin-left: 50px;
+        font-size: 12px;
+    }
+
+    .disTable, td, th{
+        border: 1px solid black !important;
+        padding: 10px !important;
+        margin-bottom: 30px;
+    }
+
+    th{
+        text-align: center;
+        font-weight: 800;
+    }
+
+
+</style>
+
+
+<div ng-app="Survey" ng-controller="distributionCtrl">
+
+    <div class="row">
+
+        <div class="col-md-6">
+
+            <select class="form-control"
+                    ng-model="selectMun"
+                    ng-change="getDis(selectMun)">
+
+                <option ng-repeat="mun in munList"
+                        value="{{mun.munCityCode}}">
+                    {{ mun.munCityName}}
+                </option>
+            </select>
+
+
+        </div>
+
+        <br />
+
+
+        <div ng-repeat="d in dis">
+            <table class="table table-bordered">
+                <tr>
+                    <th colspan="2">{{ d.brgyName }}</th>
+                </tr>
+                <tr ng-repeat="nd in d.enumList">
+                    <th>{{$index+1}}</th>
+                    <td>{{nd.name}}</td>
+                </tr>
+            </table>
+        </div>
+
+    </div>
+</div>

@@ -25,12 +25,7 @@
 
                 m.assignBrgy.forEach(function (b, i) {
 
-                    if (b.synchData != null) {
-                        b.progress = (b.synchData / b.numRef) * 100;
-                    } else {
-                        b.synchData = 0;
-                        b.progress = 0;
-                    }
+                    b.progress = (b.synchData / b.numRef) * 100;
 
                 })
 

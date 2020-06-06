@@ -38,24 +38,23 @@ namespace SurveySystem.Controllers
 
             try{
 
-            var data = (from a in db.tMunCities
-                        where a.munCityCode == munCityCode
-                        
-                        select new
-                        {
-                            a.munCityCode,
-                            totalSynch = db.tSurveys.Where(u => u.brgyCode.StartsWith(a.munCityCode)).GroupBy(u1 => u1.brgyCode).Select(u2 => 
-                                u2.Select(u3 => u3.sampleSize).Distinct().Count()
-                            ).ToList(),
-                            totalNumRef = db.tBrgies.Where(v => v.munCityCode == a.munCityCode).Select( v1 => v1.numRef).Sum(),
-                            brgyList = db.tBrgies.Where(b => b.munCityCode == a.munCityCode).Select(c => new { 
+                var data = (from a in db.tMunCities
+                            where a.munCityCode == munCityCode
+
+                            select new
+                            {
+                                a.munCityCode,
+                                totalSynch = db.tSurveys.Where(aa => aa.brgyCode.StartsWith(munCityCode) && aa.catCode == "cat001").Select(aaa => aaa.recNo).Count(),
+                                totalNumRef = db.tBrgies.Where(v => v.munCityCode == a.munCityCode).Select(v1 => v1.numRef).Sum(),
+                                brgyList = db.tBrgies.Where(b => b.munCityCode == a.munCityCode).Select(c => new
+                                {
                                     c.brgyCode,
                                     c.brgyName,
                                     c.numRef,
-                                    synchData = db.tSurveys.Where(x => x.brgyCode == c.brgyCode).Select(x1 => x1.sampleSize).Distinct().Count()
+                                    synchData = db.tSurveys.Where(xx => xx.brgyCode == c.brgyCode && xx.catCode == "cat001").Select(bbb => bbb.recNo).Count()
 
-                            })
-                        }).ToList();
+                                })
+                            }).ToList();
                 
                 return Json(data, JsonRequestBehavior.AllowGet);
 

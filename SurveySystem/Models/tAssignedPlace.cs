@@ -16,7 +16,9 @@ namespace SurveySystem.Models
     {
         public int recNo { get; set; }
         public string idNo { get; set; }
+        public string munCityCode { get; set; }
         public string brgyCode { get; set; }
+        public string prkCode { get; set; }
         public Nullable<int> numRef { get; set; }
         public Nullable<int> tag { get; set; }
     }

@@ -31,24 +31,34 @@
             </div>
         </div>
 
+
         <div class="m-t-30 m-b-30 col" style="height: 450px; overflow-y:scroll;">
+            <div ng-repeat="al in assignList" ng-if="al.assignBrgy.length > 0">
 
-            <div ng-repeat="a in assignList" class="m-t-20 card-text">
-                <span>{{ a.brgyName }}</span>
-                <i class="mdi mdi-cloud-check font-20 text-success"
-                   ng-if="bl.progress >= 100"></i>
-                <span class="badge badge-primary pull-right">{{ a.synchData }} / {{ a.numRef }}</span>
+                <div class="card m-b-30 card-body">
+                    <h4 class="card-title font-20">{{ al.munCityName }}</h4>
+                    <div ng-repeat="bl in al.assignBrgy" class="m-t-15 card-text">
+                        <span>{{ bl.brgyName }}</span>
+                        <i class="mdi mdi-cloud-check font-20 text-success"
+                           ng-if="bl.progress >= 100"></i>
+                        <span class="badge pull-right" ng-class="bl.status == true ? 'badge-success' : 'badge-primary'">
+                            {{ bl.synchData }} / {{ bl.numRef }}
+                        </span>
 
-                <div class="progress m-t-10" style="height: 5px;">
-                    <div class="progress-bar" role="progressbar" style="width: {{ (a.synchData / a.numRef) * 100 }}%"
-                         aria-valuenow="{{ a.synchData }}" aria-valuemin="0" aria-valuemax="{{ a.numRef }}">
+                        <div class="progress m-t-10" style="height: 5px;">
+                            <div class="progress-bar" ng-class="bl.status == true ? 'bg-success' : 'bg-primary'" role="progressbar" style="width: {{ bl.progress }}%"
+                                 aria-valuenow="{{ bl.synchData }}" aria-valuemin="0" aria-valuemax="{{ bl.numRef }}">
+                            </div>
+                        </div>
                     </div>
+
                 </div>
+                </p>
+                @*<p class="card-text">
+                        <small class="text-muted">Last updated 3 mins ago</small>
+                    </p>*@
             </div>
-            </p>
-            @*<p class="card-text">
-                    <small class="text-muted">Last updated 3 mins ago</small>
-                </p>*@
+
         </div>
     </div>
 </div>

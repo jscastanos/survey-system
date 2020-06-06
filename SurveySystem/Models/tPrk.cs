@@ -12,16 +12,11 @@ namespace SurveySystem.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class tSurvey
+    public partial class tPrk
     {
-        public int recNo { get; set; }
-        public string idNo { get; set; }
+        public string munCityCode { get; set; }
         public string brgyCode { get; set; }
-        public string catCode { get; set; }
-        public Nullable<int> value { get; set; }
-        public Nullable<int> sampleSize { get; set; }
-        public Nullable<int> tag { get; set; }
-        public Nullable<int> wave { get; set; }
-        public string dateSaved { get; set; }
+        public string prkCode { get; set; }
+        public string prkName { get; set; }
     }
 }
